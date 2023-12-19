@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo de pisos</title>
+</head>
+
+<body>
+    <h1>Catalogo de pisos</h1>
+    <ul>
+        {% for piso in pisos %}
+        <li>{{ piso.numReferencia }} - {{ piso.direccion }} - {{ piso.cp }}
+            {% if piso.imagenPiso %}
+            <br>
+            <img src="{{ piso.imagenPiso.url }}" alt="">
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    <hr>
+    <ol>
+        {% for cliente in clientes %}
+        <li>{{ cliente.id }} - {{ cliente.nombre }} - {{ cliente.apellidos }} - {{ cliente.correo }} - {{ cliente.telefono }}
+        </li>
+        {% endfor %}
+    </ol>
+
+</body>
+
+</html>
