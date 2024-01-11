@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+
+<body>
+    <h1>Mi Blog</h1>
+    <h2>Listado de articulos</h2>
+    <ol>
+        {% for articulo in articulos %}
+        <li>
+            <p> <b>{{ articulo }}</b></p>
+
+            <hr>
+            <p>{{ articulo.texto }}</p>
+
+            {% for comentario in articulo.comentario_set.all %}
+            <p>
+                {{ comentario.texto }}
+            </p>
+            {% endfor %}
+            <hr>
+        </li>
+        {% endfor %}
+    </ol>
+</body>
+
+</html>
