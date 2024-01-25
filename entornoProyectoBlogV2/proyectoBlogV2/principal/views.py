@@ -3,9 +3,10 @@ from django.http import HttpRequest
 from django.http.response import HttpResponse as HttpResponse
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
+from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
-from .models import Articulo
+from .models import Articulo, Categoria
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
@@ -15,6 +16,9 @@ class inicio(TemplateView):
 
 class listadoArticulos(ListView):
     model = Articulo
+
+class categoriaDetalle(DetailView):
+    model = Categoria
 
 #Decoradores de django, se utilizan justo antes de las clases en las q se van a usar, y sirven para decorar metodos
 #Con decorar nos referimos a añadis funcionalidades o requisitos

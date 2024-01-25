@@ -17,7 +17,7 @@ class Categoria(models.Model):
 class Articulo(models.Model):
     titulo = models.CharField(max_length=100,verbose_name="Título del artículo")
     texto = models.TextField(verbose_name="Contenido del artículo")
-    imagen = models.ImageField(verbose_name="Foto del artículo",null=True,blank=True,upload_to="fotos")
+    imagen = models.ImageField(verbose_name="Foto del artículo",null=True,blank=True,upload_to="img")
     creado = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creacion del artículo")
     modificado = models.DateTimeField(auto_now=True, verbose_name="Fecha de ultima modificación del artículo")
     autor = models.ForeignKey(User,on_delete=models.CASCADE)
